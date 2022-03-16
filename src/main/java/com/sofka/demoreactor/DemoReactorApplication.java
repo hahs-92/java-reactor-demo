@@ -2,6 +2,7 @@ package com.sofka.demoreactor;
 
 import com.sofka.demoreactor.model.Person;
 import com.sofka.demoreactor.operador.creacion.Creation;
+import com.sofka.demoreactor.operador.filter.Filter;
 import com.sofka.demoreactor.operador.transformation.Transformation;
 import io.reactivex.Observable;
 import org.slf4j.Logger;
@@ -86,9 +87,18 @@ public class DemoReactorApplication implements CommandLineRunner {
 		//app.repeact();
 
 		//transformacion
-		Transformation app = new Transformation();
+		//Transformation app = new Transformation();
 		//app.map();
 		//app.flatMap();
-		app.groupBy();
+		//app.groupBy();
+
+		//filtrado
+		Filter app = new Filter();
+		//app.filter();
+		//app.distinct();
+		//app.take();
+		//app.takeLast();
+		//app.skip();
+		//app.skipLast();
 	}
 }

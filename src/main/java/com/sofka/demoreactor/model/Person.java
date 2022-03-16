@@ -1,5 +1,7 @@
 package com.sofka.demoreactor.model;
 
+import java.util.Objects;
+
 public class Person {
     private Integer personId;
     private String name;
@@ -46,5 +48,18 @@ public class Person {
                 ", name='" + name + '\'' +
                 ", edad=" + edad +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(personId, person.personId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(personId);
     }
 }
