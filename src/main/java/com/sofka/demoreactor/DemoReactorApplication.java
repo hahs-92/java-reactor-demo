@@ -1,6 +1,7 @@
 package com.sofka.demoreactor;
 
 import com.sofka.demoreactor.model.Person;
+import com.sofka.demoreactor.operador.creacion.Creation;
 import io.reactivex.Observable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,8 +49,8 @@ public class DemoReactorApplication implements CommandLineRunner {
 		Flux.fromIterable(people).subscribe(p -> log.info(p.toString()));
 	}
 
-	//devuleve un array y no elemento x elemento
-	public void fluxMono() {
+	//devuleve un array(MONO)  y no elemento x elemento
+	public void fluxToMono() {
 		List<Person> people = List.of(
 				new Person(1, "Alex",29),
 				new Person(2, "Jess",24),
@@ -58,6 +59,7 @@ public class DemoReactorApplication implements CommandLineRunner {
 
 		Flux<Person> fx = Flux.fromIterable(people);
 		fx.collectList().subscribe(list -> log.info(list.toString()));
+		//collectList devuelve un Mono
 	}
 
 
@@ -74,7 +76,13 @@ public class DemoReactorApplication implements CommandLineRunner {
 		//mono();
 		//flux();
 
-		fluxMono();
+		//fluxToMono();
+
+
+		//creacion
+		Creation app = new Creation();
+		app.range();
+		app.repeact();
 
 	}
 }
