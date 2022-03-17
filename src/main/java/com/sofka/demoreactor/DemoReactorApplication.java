@@ -2,6 +2,7 @@ package com.sofka.demoreactor;
 
 import com.sofka.demoreactor.model.Person;
 import com.sofka.demoreactor.operador.creacion.Creation;
+import com.sofka.demoreactor.operador.error.ErrorOp;
 import com.sofka.demoreactor.operador.filter.Filter;
 import com.sofka.demoreactor.operador.merge.Merge;
 import com.sofka.demoreactor.operador.transformation.Transformation;
@@ -102,9 +103,16 @@ public class DemoReactorApplication implements CommandLineRunner {
 		//app.skipLast();
 
 		//combinacion
-		Merge app = new Merge();
+		//Merge app = new Merge();
 		//app.merge();
 		//app.zip();
-		app.zipWith();
+		//app.zipWith();
+
+		//manejo de errores => Con el error map devuelves una nueva excepción, el onErrorResume devuelves un nuevo mono
+		ErrorOp app = new ErrorOp();
+		//app.retry();
+		//app.errorReturn();
+		//app.errorResumen();
+		app.errorMap();
 	}
 }
