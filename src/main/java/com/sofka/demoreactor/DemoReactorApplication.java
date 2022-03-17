@@ -3,6 +3,7 @@ package com.sofka.demoreactor;
 import com.sofka.demoreactor.model.Person;
 import com.sofka.demoreactor.operador.creacion.Creation;
 import com.sofka.demoreactor.operador.filter.Filter;
+import com.sofka.demoreactor.operador.merge.Merge;
 import com.sofka.demoreactor.operador.transformation.Transformation;
 import io.reactivex.Observable;
 import org.slf4j.Logger;
@@ -80,7 +81,6 @@ public class DemoReactorApplication implements CommandLineRunner {
 
 		//fluxToMono();
 
-
 		//creacion
 		//Creation app = new Creation();
 		//app.range();
@@ -93,12 +93,18 @@ public class DemoReactorApplication implements CommandLineRunner {
 		//app.groupBy();
 
 		//filtrado
-		Filter app = new Filter();
+		//Filter app = new Filter();
 		//app.filter();
 		//app.distinct();
 		//app.take();
 		//app.takeLast();
 		//app.skip();
 		//app.skipLast();
+
+		//combinacion
+		Merge app = new Merge();
+		//app.merge();
+		//app.zip();
+		app.zipWith();
 	}
 }
