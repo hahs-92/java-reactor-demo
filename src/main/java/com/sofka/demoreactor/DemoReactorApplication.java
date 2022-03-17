@@ -1,6 +1,7 @@
 package com.sofka.demoreactor;
 
 import com.sofka.demoreactor.model.Person;
+import com.sofka.demoreactor.operador.Math.Mathematic;
 import com.sofka.demoreactor.operador.conditional.Conditional;
 import com.sofka.demoreactor.operador.creacion.Creation;
 import com.sofka.demoreactor.operador.error.ErrorOp;
@@ -116,9 +117,16 @@ public class DemoReactorApplication implements CommandLineRunner {
 		//app.errorResumen();
 		//app.errorMap();
 
-		Conditional app = new Conditional();
+		//Conditional app = new Conditional();
 		//app.defaultIfEmpty();
 		//app.takeUntil();
-		app.timeout();
+		//app.timeout();
+
+		Mathematic app = new Mathematic();
+		//app.average();
+		//app.count();
+		//app.min();
+		//app.sum();
+		app.summarizing();
 	}
 }
