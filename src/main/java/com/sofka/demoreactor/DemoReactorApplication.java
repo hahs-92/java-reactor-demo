@@ -1,6 +1,7 @@
 package com.sofka.demoreactor;
 
 import com.sofka.demoreactor.model.Person;
+import com.sofka.demoreactor.operador.conditional.Conditional;
 import com.sofka.demoreactor.operador.creacion.Creation;
 import com.sofka.demoreactor.operador.error.ErrorOp;
 import com.sofka.demoreactor.operador.filter.Filter;
@@ -109,10 +110,15 @@ public class DemoReactorApplication implements CommandLineRunner {
 		//app.zipWith();
 
 		//manejo de errores => Con el error map devuelves una nueva excepción, el onErrorResume devuelves un nuevo mono
-		ErrorOp app = new ErrorOp();
+		//ErrorOp app = new ErrorOp();
 		//app.retry();
 		//app.errorReturn();
 		//app.errorResumen();
-		app.errorMap();
+		//app.errorMap();
+
+		Conditional app = new Conditional();
+		//app.defaultIfEmpty();
+		//app.takeUntil();
+		app.timeout();
 	}
 }
